@@ -1,0 +1,17 @@
+设置全屏
+	1. 设置 Flag
+		/*set it to be no title*/ 
+      	requestWindowFeature(Window.FEATURE_NO_TITLE); 
+       	/*set it to be full screen*/ 
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,    
+        WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+    2. 设置主题
+    	android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+
+    3. 自定义 style
+    	<style name="MyTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        	<item name="android:windowFullscreen">true</item>
+        	<item name="windowActionBar">false</item>
+        	<item name="windowNoTitle">true</item>
+    	</style>
