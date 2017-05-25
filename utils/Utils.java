@@ -140,4 +140,38 @@ public class Utils {
         }
         return result;
     }
+    
+     /**
+     * 需要 sd 卡权限，需要动态权限检查
+     * @param activity
+     * @return
+     */
+    public static boolean realScreenShot(Activity activity) {
+        boolean result = false;
+        View dView = activity.getWindow().getDecorView();
+        dView.setDrawingCacheEnabled(true);
+        dView.buildDrawingCache();
+        Bitmap bmp = dView.getDrawingCache();
+        if (bmp != null) {
+            try {
+                // 获取内置SD卡路径
+                String sdCardPath = Environment.getExternalStorageDirectory().getPath();
+                // 图片文件路径
+                String filePath = sdCardPath + File.separator + "screenshot.png";
+                File file = new File(filePath);
+                if (file.exists()) {
+                    file.delete();
+                }
+                file.createNewFile();
+                FileOutputStream os = new FileOutputStream(file);
+                bmp.compress(Bitmap.CompressFormat.PNG, 100, os);
+                os.flush();
+                os.close();
+                result = true;
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return result;
+    }
 }
