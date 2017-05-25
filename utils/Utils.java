@@ -60,6 +60,54 @@ public class Utils {
         float density = ctx.getResources().getDisplayMetrics().density;
         return Math.round((float) dp * density);
     }
+    
+    public static float getScreenWidth(Context ctx) {
+        return ctx.getResources().getDisplayMetrics().widthPixels;
+    }
+
+    public static float getScreenHeight(Context ctx) {
+        WindowManager wm = (WindowManager) ctx
+                .getSystemService(Context.WINDOW_SERVICE);
+        int height = wm.getDefaultDisplay().getHeight();
+        return ctx.getResources().getDisplayMetrics().heightPixels;
+    }
+    
+    /**
+     * 获取状态栏高度，任何时候使用
+     * @param ctx
+     * @return  -1 表示失败
+     */
+    public static float getStatusHeight(Context ctx) {
+        int statusBarHeight = -1;
+        int resourceId = ctx.getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            //根据资源ID获取响应的尺寸值
+            statusBarHeight = ctx.getResources().getDimensionPixelSize(resourceId);
+        }
+        return statusBarHeight;
+    }
+
+    /**
+     * 获取状态栏高度， 只能在 onWindowFocusChanged() 里调用
+     * @param activity
+     * @return
+     */
+    public static float getStatusHeightAfterWindowFocused(Activity activity) {
+        Rect frame = new Rect();
+        activity.getWindow().getDecorView().getWindowVisibleDisplayFrame(frame);
+        return frame.top;
+    }
+
+    /**
+     * 获取标题栏高度， 只能在 onWindowFocusChanged() 里调用
+     * @param activity
+     * @param statusBarHeight
+     * @return
+     */
+    public static float getTitleBarH(Activity activity, int statusBarHeight) {
+        int contentTop = activity.getWindow().findViewById(Window.ID_ANDROID_CONTENT).getTop();
+        return contentTop - statusBarHeight;
+    }
 
     /**
      * Formats time in milliseconds to hh:mm:ss string format.
