@@ -61,6 +61,10 @@ public class Utils {
         return Math.round((float) dp * density);
     }
     
+    public static float getScreenDensity(Context ctx) {
+        return ctx.getResources().getDisplayMetrics().density;
+    }
+    
     public static float getScreenWidth(Context ctx) {
         return ctx.getResources().getDisplayMetrics().widthPixels;
     }
