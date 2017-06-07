@@ -42,13 +42,13 @@ public abstract class BaseListAdapter<T> extends BaseAdapter {
         return mDatas;
     }
 
-    public void appendDatas(List<T> list) {
+    public void appendList(List<T> list) {
         if (mDatas == null) mDatas = new ArrayList<T>();
         mDatas.addAll(list);
         notifyDataSetChanged();
     }
     
-    public void appendDatas(T t) {
+    public void appendItem(T t) {
         if (mDatas == null) mDatas = new ArrayList<T>();
         mDatas.add(t);
         notifyDataSetChanged();
