@@ -87,3 +87,6 @@ public static boolean MIUISetStatusBarLightMode(Window window, boolean dark) {
     }
     return result;
 }
+
+android 屏幕大小  360 x 640
+状态栏高度  20
