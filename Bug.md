@@ -9,3 +9,7 @@
 #Activity
   1.onCreate()
     代码一般不能写在 setContentView() 的前面
+    
+# PagerSlidingTabStrip
+  需要先设置数据后，在设置 viewPager
+  
