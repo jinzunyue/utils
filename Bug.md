@@ -18,3 +18,7 @@
     listView.setDivider(new ColorDrawable(0xffd4d5d6));
     listView.setDividerHeight(2);
     顺序一定不能错
+    
+ # TextView
+  1. 颜色选择器
+    getColorStateList
