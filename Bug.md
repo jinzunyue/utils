@@ -22,3 +22,7 @@
  # TextView
   1. 颜色选择器
     getColorStateList
+    
+# EditView
+  1. 很高的高度，设置光标的位置
+    android:gravity="start"
