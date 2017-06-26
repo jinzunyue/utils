@@ -11,8 +11,8 @@
     代码一般不能写在 setContentView() 的前面
     
 # PagerSlidingTabStrip
-  需要先设置数据后，在设置 viewPager
-  
+  1. 需要先设置数据后，在设置 viewPager
+  2. setOnPageChangeListener 需要在 PagerSlidingTabStrip 上设置，否则会覆盖 PagerSlidingTabStrip 的
 # ListView
   1. 动态设置分割线
     listView.setDivider(new ColorDrawable(0xffd4d5d6));
