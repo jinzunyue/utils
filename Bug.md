@@ -26,3 +26,6 @@
 # EditView
   1. 很高的高度，设置光标的位置
     android:gravity="start"
+    
+# onTouch
+  1. down 返回 true, up事件才能接受到
