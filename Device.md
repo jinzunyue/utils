@@ -19,13 +19,4 @@
 			activity.getContentResolver().notifyChange(uri, null);
 		}
 
-* [1.语法示例](#1)
 
-* [1.1图片](#1.1)
-
-* [1.2换行](#1.2)
-
-* [1.3强调](#1.3)
-
-<h2 id="1.3">1.语法示例</h2>
-skjfk
