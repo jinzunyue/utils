@@ -18,6 +18,10 @@
     listView.setDivider(new ColorDrawable(0xffd4d5d6));
     listView.setDividerHeight(2);
     顺序一定不能错
+  2. 设置当前选中位置
+    listView.setSelection();
+    如果无效，在之前设置
+    listView.requestFoucs();
     
  # TextView
   1. 颜色选择器
@@ -29,3 +33,5 @@
     
 # onTouch
   1. down 返回 true, up事件才能接受到
+  
+
